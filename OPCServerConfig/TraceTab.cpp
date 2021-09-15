@@ -184,12 +184,12 @@ void TraceTab::OnCbnSelchangeComboDeactaftinitconf()
 BOOL TraceTab::OnInitDialog()
 {
 	CMFCPropertyPage::OnInitDialog();
-
+	//filter files show only log files
 	m_EditBrowseTraceFile.EnableFileBrowseButton(L"LOG", L"log files|*.log||");
 	// TODO:  Add extra initialization here
 	Helper::pNode = Helper::xmlDoc.RootElement();	//dosyanýn root'unu yükler
 	Helper::pNode = Helper::pNode->FirstChildElement("UaServerConfig");
-	tinyxml2::XMLElement* pItemTrace = Helper::pNode->FirstChildElement("Trace");
+	auto pItemTrace = Helper::pNode->FirstChildElement("Trace");
 	Helper::pNode = pItemTrace->FirstChildElement();
 	Helper::pNode = Helper::SetComboBox(Helper::pNode, m_EnStackTrace);
 	Helper::pNode = Helper::FindSetComboBox(Helper::pNode, m_StckTraceLevel);

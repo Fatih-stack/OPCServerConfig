@@ -101,7 +101,7 @@ BOOL COPCServerConfigApp::InitInstance()
 		return false;
 	}
 	else {
-		if (NULL == Helper::xmlDoc.RootElement())
+		if (nullptr == Helper::xmlDoc.RootElement())
 		{
 			AfxMessageBox(L"ERROR => Root element NULL in XML file");
 			return false;

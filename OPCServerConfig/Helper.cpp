@@ -25,10 +25,6 @@ tinyxml2::XMLElement* Helper::SetComboBox(tinyxml2::XMLElement* pItem, CComboBox
 tinyxml2::XMLElement* Helper::FindSetComboBox(tinyxml2::XMLElement* pItem, CComboBox& combo)
 {
 	CString s2 = CA2T(pItem->GetText(), CP_UTF8);
-	/*
-	* UTF8'den UTF16'ya dönüþüm
-	* MultibyteToWidechar methodunu kullan CA2W makrosunu kullan
-	*/
 	int nItem = combo.FindString(0, s2);
 	if (nItem >= 0)
 		combo.SetCurSel(nItem);
